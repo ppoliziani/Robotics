@@ -9,7 +9,7 @@ import lejos.robotics.SampleProvider;
 
 public class LineFollower {
 
-	public static void main(String[]) {
+	public static void main(String[] args) {
 		BaseRegulatedMotor mLeft = new EV3LargeRegulatedMotor ( MotorPort . A );
 		BaseRegulatedMotor mRight = new EV3LargeRegulatedMotor ( MotorPort . B );
 		
