@@ -21,13 +21,12 @@ public class SimpleChap {
         clap.fetchSample(level,0);
 
         if (level[0] > 0.9f) {
-            mLeft.forward();
-            mRight.forward();
             while(true) {
+                mLeft.forward();
+                mRight.forward();
                 clap.fetchSample(level, 0);
                 if (level[0] > 0.9f) {
-                    mLeft.forward();
-                    mRight.stop();
+                    mLeft.rotate(90);
                 }
                 Delay.msDelay(835);
                 mRight.forward();
