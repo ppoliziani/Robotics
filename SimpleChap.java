@@ -5,7 +5,6 @@ import lejos.hardware.port.SensorPort;
 import lejos.hardware.sensor.NXTSoundSensor;
 import lejos.hardware.sensor.SensorMode;
 import lejos.robotics.SampleProvider;
-import lejos.utility.Delay;
 
 public class SimpleChap {
     public static void main(String[] args) {
