@@ -28,8 +28,6 @@ public class SimpleChap {
                 if (level[0] > 0.9f) {
                     mLeft.rotate(90);
                 }
-                Delay.msDelay(835);
-                mRight.forward();
             }
         }
     }
