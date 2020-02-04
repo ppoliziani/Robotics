@@ -18,7 +18,7 @@ public class WallDetection extends Thread {
 		SampleProvider samps = sensor.getDistanceMode();
 		while(true) {
 			samps.fetchSample(arr, 0);
-			if(arr[0] < 0.5f ) {
+			if(arr[0] < 0.5f) {
 				mLeft.stop();
 				mRight.stop();
 			}
