@@ -8,8 +8,8 @@ public class WallDetection extends Thread {
 	private BaseRegulatedMotor mRight;
 	private float[] arr;
 	
-	public WallDetection(BaseRegulatedMotor m, BaseRegulatedMotor r) {
-		this.mLeft = m;
+	public WallDetection(BaseRegulatedMotor l, BaseRegulatedMotor r) {
+		this.mLeft = l;
 		this.mRight = r;
 	}
 	
