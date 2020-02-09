@@ -42,8 +42,7 @@ public class LineFollower {
 				mLeft.stop();
 				mRight.forward();
 			}
-		}
-				
+		}		
 	}
 
 }
