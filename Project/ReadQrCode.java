@@ -14,8 +14,6 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
-package Project;
-
 public class ReadQrCode {
 	
 	public static String readQRCode(String filePath, String charset, Map hintMap)throws FileNotFoundException, IOException, NotFoundException {
