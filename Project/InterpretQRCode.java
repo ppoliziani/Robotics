@@ -23,7 +23,6 @@ public class InterpretQRCode implements Behavior {
                 //while(!QRCodeDetected)
                     //pilot.travel(500);
                     //playTone(toneLeft, durationLeft)
-
                 break;
             case "RIGHT":
                 int toneRight = Integer.parseInt(stringArr[1]);
