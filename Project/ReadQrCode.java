@@ -21,8 +21,8 @@ public class ReadQrCode {
 	public static String readQRCode(String filePath, String charset, Map hintMap)throws FileNotFoundException, IOException, NotFoundException {
 		    
 		BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(new BufferedImageLuminanceSource(ImageIO.read(new FileInputStream(filePath)))));
-		    Result qrCodeResult = new MultiFormatReader().decode(binaryBitmap,hintMap);
-		    return qrCodeResult.getText();
+		Result qrCodeResult = new MultiFormatReader().decode(binaryBitmap,hintMap);
+		return qrCodeResult.getText();
 	}
 
 }
