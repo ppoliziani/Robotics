@@ -4,6 +4,8 @@ import lejos.hardware.port.MotorPort;
 import lejos.robotics.navigation.MovePilot;
 import lejos.robotics.subsumption.Behavior;
 
+import static lejos.hardware.Sound.playTone;
+
 public class InterpretQRCode implements Behavior {
 
     private MovePilot pilot;
@@ -17,20 +19,23 @@ public class InterpretQRCode implements Behavior {
         String[] stringArr = QRString.split(" ");
         switch(stringArr[0]) {
             case "LEFT":
-                int toneLeft = Integer.parseInt(stringArr[1]);
-                int durationLeft = Integer.parseInt(stringArr[2]);
-                pilot.rotate(-90);
-                //while(!QRCodeDetected)
-                    //pilot.travel(500);
-                    //playTone(toneLeft, durationLeft)
+                while(!takeControl()) {
+                    int toneLeft = Integer.parseInt(stringArr[1]);
+                    int durationLeft = Integer.parseInt(stringArr[2]);
+                    pilot.rotate(-90);
+                    pilot.travel(500);
+                    playTone(toneLeft, durationLeft);
+                }
+
                 break;
             case "RIGHT":
-                int toneRight = Integer.parseInt(stringArr[1]);
-                int durationRight = Integer.parseInt(stringArr[2]);
-                pilot.rotate(90);
-                //while(!QRCodeDetected)
-                    //pilot.travel(500);
-                    //playTone(toneLeft, durationRight)
+                while(!takeControl()) {
+                    int toneRight = Integer.parseInt(stringArr[1]);
+                    int durationRight = Integer.parseInt(stringArr[2]);
+                    pilot.rotate(90);
+                    pilot.travel(500);
+                    playTone(toneRight, durationRight);
+                }
                 break;
         }
     }
@@ -38,10 +43,8 @@ public class InterpretQRCode implements Behavior {
     public void suppress() {}
 
     public boolean takeControl() {
-        return false; // behaviours need to be decided first.
+        return false; // boolean method for the camera detecting a QR Code.
     }
-    public static void main(String[] args) {
-        BaseRegulatedMotor mLeft = new EV3LargeRegulatedMotor(MotorPort.A);
-        BaseRegulatedMotor mRight = new EV3LargeRegulatedMotor(MotorPort.B);
-    }
+    public static void main(String[] args) { }
 }
+
