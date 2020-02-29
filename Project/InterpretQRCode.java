@@ -43,7 +43,7 @@ public class InterpretQRCode implements Behavior {
     public void suppress() {}
 
     public boolean takeControl() {
-        return false; // boolean method for the camera detecting a QR Code.
+        return false; // boolean expression for the camera detecting a QR Code.
     }
     public static void main(String[] args) { }
 }
