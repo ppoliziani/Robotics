@@ -12,7 +12,7 @@ public class WallDetection implements Behavior {
 	private static int AVOID_THIS_DISTANCE = 15; // subject to change.
 	
 	//Constructor
-	public ObstacleDetect(SensorPort s, DifferentialPilot pilot, navigatorigator navigator) {
+	public WallDetection(SensorPort s, DifferentialPilot pilot, navigatorigator navigator) {
 		this.wallSensor = new UltrasonicSensor(s);
 		this.pilot = pilot;
 		this.navigator = navigator;
