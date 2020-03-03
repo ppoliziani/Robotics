@@ -1,9 +1,5 @@
-import lejos.hardware.motor.BaseRegulatedMotor;
-import lejos.hardware.motor.EV3LargeRegulatedMotor;
-import lejos.hardware.port.MotorPort;
 import lejos.robotics.navigation.MovePilot;
 import lejos.robotics.subsumption.Behavior;
-
 import static lejos.hardware.Sound.playTone;
 
 public class InterpretQRCode implements Behavior {
@@ -18,32 +14,33 @@ public class InterpretQRCode implements Behavior {
     public void action() {
         String[] stringArr = QRString.split(" ");
         switch(stringArr[0]) {
-            case "LEFT"
+            case "LEFT": 
                 int toneLeft = Integer.parseInt(stringArr[1]);
                 int durationLeft = Integer.parseInt(stringArr[2]);
                 pilot.rotate(-90);
                 pilot.travel(500);
                 playTone(toneLeft, durationLeft);
-            break;
+                break;
             case "RIGHT":
                 int toneRight = Integer.parseInt(stringArr[1]);
                 int durationRight = Integer.parseInt(stringArr[2]);
                 pilot.rotate(90);
                 pilot.travel(500);
                 playTone(toneRight, durationRight);
-            break;  
+                break;
             case "FORWARD":
-                int toneRight = Integer.parseInt(stringArr[1]);
-                int durationRight = Integer.parseInt(stringArr[2]);
+                int toneForward = Integer.parseInt(stringArr[1]);
+                int durationForward = Integer.parseInt(stringArr[2]);
                 pilot.travel(500);
-                playTone(toneRight, durationRight);
-            break;
+                playTone(toneForward, durationForward);
+                break;
+        }
     }
 
     public void suppress() {}
 
     public boolean takeControl() {
-        return false; // boolean expression for the camera detecting a QR Code.
+        return false; // boolean method for the camera detecting a QR Code.
     }
     public static void main(String[] args) { }
 }
