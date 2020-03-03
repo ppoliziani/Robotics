@@ -18,7 +18,7 @@ class FollowLines implements Behavior {
          this.MAX_LIGHT = 0.0f;
          this.MIN_LIGHT = 1.0f;
          this.pilot = p;
-        pilot.setLinearSpeed(10);
+         pilot.setLinearSpeed(10);
     }
 
     public boolean takeControl() {
