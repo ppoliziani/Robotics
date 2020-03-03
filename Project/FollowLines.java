@@ -9,7 +9,7 @@ class FollowLines implements Behavior {
     private float[] samples;
     private float MAX_LIGHT;
     private float MIN_LIGHT;
-    private MovePilot mP;
+    private MovePilot pilot;
 
     public FollowLines(MovePilot p) {
          EV3ColorSensor red = new EV3ColorSensor(SensorPort.S1);
@@ -17,7 +17,8 @@ class FollowLines implements Behavior {
          this.samples = new float[1];
          this.MAX_LIGHT = 0.0f;
          this.MIN_LIGHT = 1.0f;
-         this.mP = p;
+         this.pilot = p;
+        pilot.setLinearSpeed(10);
     }
 
     public boolean takeControl() {
@@ -29,9 +30,9 @@ class FollowLines implements Behavior {
             if (samples[0] > MAX_LIGHT) MAX_LIGHT = samples[0];
             if (samples[0] < MIN_LIGHT) MIN_LIGHT = samples[0];
             float AVERAGE = (MAX_LIGHT + MIN_LIGHT) / 2;
-            if (samples[0] > AVERAGE) mP.rotate(45);
-            else mP.rotate(-45);
-            mP.travel(400);
+            if (samples[0] > AVERAGE) pilot.rotate(45);
+            else pilot.rotate(-45);
+            pilot.travel(400);
         }
     }
     public void suppress(){}
