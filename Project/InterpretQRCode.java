@@ -9,12 +9,13 @@ public class InterpretQRCode implements Behavior {
     public InterpretQRCode(MovePilot p, String q) {
         this.pilot = p;
         this.QRString = q;
+        pilot.setLinearSpeed(10);
     }
 
     public void action() {
         String[] stringArr = QRString.split(" ");
         switch(stringArr[0]) {
-            case "LEFT": 
+            case "LEFT":
                 int toneLeft = Integer.parseInt(stringArr[1]);
                 int durationLeft = Integer.parseInt(stringArr[2]);
                 pilot.rotate(-90);
