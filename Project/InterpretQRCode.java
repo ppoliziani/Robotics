@@ -6,13 +6,14 @@ public class InterpretQRCode implements Behavior {
 
     private MovePilot pilot;
     private String QRString;
-    public InterpretQRCode(MovePilot p, String q) {
+    public InterpretQRCode(MovePilot p) {
         this.pilot = p;
-        this.QRString = q;
         pilot.setLinearSpeed(10);
     }
 
     public void action() {
+        // Probably better to call zxing() in action() and split.
+        // QRString = zxing();
         String[] stringArr = QRString.split(" ");
         switch(stringArr[0]) {
             case "LEFT":
