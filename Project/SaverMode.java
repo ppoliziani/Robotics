@@ -4,8 +4,7 @@ import lejos.robotics.navigation.MovePilot;
 import lejos.robotics.subsumption.Behavior;
 
 class SaverMode implements Behavior {
-    private float LOW_LEVEL;
-    private boolean supressed = false;
+    private final float LOW_LEVEL;
     public MovePilot pilot;
     public SaverMode(MovePilot p) { this.pilot = p; }
     public void action() {
@@ -19,9 +18,5 @@ class SaverMode implements Behavior {
     public boolean takeControl(){
         float voltage = Battery.getVoltage();
         return voltage < LOW_LEVEL;
-    }
-
-    public void LowBattery(float volts){
-        LOW_LEVEL = volts;
     }
 }
