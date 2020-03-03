@@ -37,7 +37,7 @@ public class InterpretQRCode implements Behavior {
                 int durationRight = Integer.parseInt(stringArr[2]);
                 pilot.travel(500);
                 playTone(toneRight, durationRight);
-                break;
+            break;
     }
 
     public void suppress() {}
