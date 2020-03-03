@@ -12,7 +12,7 @@ public class InterpretQRCode implements Behavior {
     }
 
     public void action() {
-        // Probably better to call zxing() in action() and split.
+        // Probably better to call zxing() in action() and split after.
         // QRString = zxing();
         String[] stringArr = QRString.split(" ");
         switch(stringArr[0]) {
