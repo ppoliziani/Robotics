@@ -18,34 +18,26 @@ public class InterpretQRCode implements Behavior {
     public void action() {
         String[] stringArr = QRString.split(" ");
         switch(stringArr[0]) {
-            case "LEFT":
-                while(!takeControl()) {
-                    int toneLeft = Integer.parseInt(stringArr[1]);
-                    int durationLeft = Integer.parseInt(stringArr[2]);
-                    pilot.rotate(-90);
-                    pilot.travel(500);
-                    playTone(toneLeft, durationLeft);
-                }
-
-                break;
+            case "LEFT"
+                int toneLeft = Integer.parseInt(stringArr[1]);
+                int durationLeft = Integer.parseInt(stringArr[2]);
+                pilot.rotate(-90);
+                pilot.travel(500);
+                playTone(toneLeft, durationLeft);
+            break;
             case "RIGHT":
-                while(!takeControl()) {
-                    int toneRight = Integer.parseInt(stringArr[1]);
-                    int durationRight = Integer.parseInt(stringArr[2]);
-                    pilot.rotate(90);
-                    pilot.travel(500);
-                    playTone(toneRight, durationRight);
-                }
-                break;  
-                case "FORWARD":
-                    while(!takeControl()) {
-                        int toneRight = Integer.parseInt(stringArr[1]);
-                        int durationRight = Integer.parseInt(stringArr[2]);
-                        pilot.travel(500);
-                        playTone(toneRight, durationRight);
-                    }
-                    break;
-        }
+                int toneRight = Integer.parseInt(stringArr[1]);
+                int durationRight = Integer.parseInt(stringArr[2]);
+                pilot.rotate(90);
+                pilot.travel(500);
+                playTone(toneRight, durationRight);
+            break;  
+            case "FORWARD":
+                int toneRight = Integer.parseInt(stringArr[1]);
+                int durationRight = Integer.parseInt(stringArr[2]);
+                pilot.travel(500);
+                playTone(toneRight, durationRight);
+                break;
     }
 
     public void suppress() {}
