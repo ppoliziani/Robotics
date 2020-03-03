@@ -37,6 +37,15 @@ public class InterpretQRCode implements Behavior {
                     playTone(toneRight, durationRight);
                 }
                 break;
+                
+                case "FORWARD":
+                    while(!takeControl()) {
+                        int toneRight = Integer.parseInt(stringArr[1]);
+                        int durationRight = Integer.parseInt(stringArr[2]);
+                        pilot.travel(500);
+                        playTone(toneRight, durationRight);
+                    }
+                    break;
         }
     }
 
@@ -47,4 +56,3 @@ public class InterpretQRCode implements Behavior {
     }
     public static void main(String[] args) { }
 }
-
