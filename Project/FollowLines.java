@@ -22,7 +22,7 @@ class FollowLines implements Behavior {
     }
 
     public boolean takeControl() {
-        return false; // boolean expression for the camera detecting a QR Code.
+        return true; // boolean expression for the camera detecting a QR Code.
     }
     public void action() {
         while (!takeControl()) {
