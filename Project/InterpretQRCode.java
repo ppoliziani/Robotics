@@ -36,8 +36,7 @@ public class InterpretQRCode implements Behavior {
                     pilot.travel(500);
                     playTone(toneRight, durationRight);
                 }
-                break;
-                
+                break;  
                 case "FORWARD":
                     while(!takeControl()) {
                         int toneRight = Integer.parseInt(stringArr[1]);
