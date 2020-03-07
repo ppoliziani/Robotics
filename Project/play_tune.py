@@ -5,5 +5,5 @@ freq = [587.33, 1567.98, 1244.51, 1174.66, 1244.51, 1174.66, 1046.50, 1174.66, 1
 
 
 for i in freq:
-    winsound.Beep(int(i),250)
+    winsound.Beep(int(i),225)
 
