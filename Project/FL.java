@@ -25,6 +25,8 @@ public class FL {
 		
 		MovePilot pilot = getPilot(MotorPort.A, MotorPort.B, WHEEL_DIAMETER, AXEL_LENGTH); 
 		pilot.setLinearSpeed(100);
+		//Sets the acceleration at which the robot will accelerate at the start of a move and decelerate at the end of a move
+		pilot.setAngularAcceleration(45); 
 		
 		Thread watcher = new ColourWatcher(pilot);
 		
