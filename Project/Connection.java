@@ -46,10 +46,6 @@ public class Connection implements Behavior {
 			try {
 				connection.connect(sa, 1500); // Timeout possible
 			} catch (Exception ex) {
-				// This connection fail is just ignored - we were probably not trying to connect because there was no
-				// Android device
-				// Could be Timeout or just a normal IO exception
-				//LCD.drawString(ex.getMessage(), 0,6);
 				connection = null;
 			}
 			
@@ -101,8 +97,8 @@ public class Connection implements Behavior {
 	public void suppress() {}
 	
 	public boolean takeControl() {
-		return (connection == null); 
-		//return true;
+		//return (connection == null); 
+		return true;
 	} 
 	
 }
