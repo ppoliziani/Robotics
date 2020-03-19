@@ -27,12 +27,7 @@ public class Connection implements Behavior {
 	private static OutputStream out = null;
 	public static boolean connected = false;
 	
-	//private MovePilot pilot;
-	//private Thread watcher;
-	Connection() {
-		//this.pilot = mp;
-		//this.watcher = watcher;
-	}
+	Connection() {}
 	
 	public void action() {
 		
@@ -53,13 +48,11 @@ public class Connection implements Behavior {
 				try {
 					in = new BufferedInputStream(connection.getInputStream());
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				try {
 					out = connection.getOutputStream();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				LCD.drawString("Connected", 0, 3);
@@ -68,18 +61,12 @@ public class Connection implements Behavior {
 			}	
 			break;
 		}
-		if (connected) {
-			LCD.drawString("Press Enter", 0, 4);
-			LCD.drawString("To Begin", 0, 5);
-		} else {
+		if (!connected) {
 			LCD.drawString("Not connected", 0, 4);
-			LCD.drawString("Try Again", 0, 5);
-			
+			LCD.drawString("Trying Again", 0, 5);
+		} else {
+			LCD.drawString("Connected", 0, 6);
 		}
-		LCD.drawString("" + connected, 0, 6);
-//		
-//		watcher.start();
-//		pilot.forward();
 	}
 	
 	public boolean getConnected() {
@@ -97,8 +84,6 @@ public class Connection implements Behavior {
 	public void suppress() {}
 	
 	public boolean takeControl() {
-		//return (connection == null); 
-		return true;
+		return (!connection.isConnected() | in == null);
 	} 
-	
 }
