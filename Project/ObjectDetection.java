@@ -1,9 +1,9 @@
 
 
-public class WallDetection implements Behavior {
+public class ObjectDetection implements Behavior {
 
 	//Variables
-	private UltrasonicSensor wallSensor;
+	private UltrasonicSensor objectSensor;
 	private DifferentialPilot pilot;
 	private navigatorigator navigator;
 	private boolean suppressed = false;
@@ -12,8 +12,8 @@ public class WallDetection implements Behavior {
 	private static int AVOID_THIS_DISTANCE = 15; // subject to change.
 	
 	//Constructor
-	public WallDetection(SensorPort s, DifferentialPilot pilot, navigatorigator navigator) {
-		this.wallSensor = new UltrasonicSensor(s);
+	public ObjectDetection(SensorPort s, DifferentialPilot pilot, navigatorigator navigator) {
+		this.objectSensor = new UltrasonicSensor(s);
 		this.pilot = pilot;
 		this.navigator = navigator;
 	}
