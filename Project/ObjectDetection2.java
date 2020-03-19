@@ -26,10 +26,8 @@ public class ObjectDetection2 implements Behavior {
 	
 	public void suppress() {
 	}
-
-
-	public boolean takeControl() {
 	
+	public boolean takeControl() {
 		sp.fetchSample(distance, 0);
 		return (distance[0] < AVOID_THIS_DISTANCE);
 	}
