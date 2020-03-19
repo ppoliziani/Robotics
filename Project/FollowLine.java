@@ -38,6 +38,6 @@ public class FollowLine implements Behavior {
 	public boolean takeControl() {
 		Connection con = new Connection();
 		sp.fetchSample(distance, 0);
-		return (con.getConnected() | distance[0] < AVOID_THIS_DISTANCE);
+		return (con.getConnected() | distance[0] > AVOID_THIS_DISTANCE);
 	}
 }
