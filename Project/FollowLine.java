@@ -17,10 +17,10 @@ public class FollowLine implements Behavior {
 	private EV3UltrasonicSensor ultraSensor = new EV3UltrasonicSensor(SensorPort.S4);
 	private SampleProvider sp = ultraSensor.getDistanceMode();
 	private float[] distance = new float[1];
-	
-    private MovePilot pilot;
-    private Thread QRwatcher;
-    private Thread Colourwatcher;
+
+	private MovePilot pilot;
+    	private Thread QRwatcher;
+   	private Thread Colourwatcher;
 	FollowLine(MovePilot mp, Thread QRwatcher, Thread Colourwatcher) { 
 		this.pilot = mp;
 		this.QRwatcher = QRwatcher;
@@ -37,12 +37,7 @@ public class FollowLine implements Behavior {
 	
 	public boolean takeControl() {
 		Connection con = new Connection();
-		
 		sp.fetchSample(distance, 0);
 		return (con.getConnected() | distance[0] < AVOID_THIS_DISTANCE);
-	
-		
 	}
-	
-
 }
