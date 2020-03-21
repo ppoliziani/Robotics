@@ -18,7 +18,8 @@ class SaverMode implements Behavior {
     public void action() {
         if (takeControl()) {
             LCD.drawString("Saver mode enabled", 0, 0);
-            pilot.setLinearSpeed(5);
+            mLeft.setSpeed(20);
+            mRight.setSpeed(20);
         }
     }
     public void suppress(){}
