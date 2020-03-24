@@ -1,2 +1,8 @@
 README FILE
 
+BatterySaver.java - checks the level of the battery and if it falls below 6.2 it will enter saver mode
+ColourWatcher.java - a watcher thread on the colour sensor that dictates if the robot needs to steer left or right
+Connection.java - establishes a connection between the robot and the phone
+FollowLine.java - starts the motors moving forward and calls the threads
+QRThread.java - watcher thread that interprets the qr codes read from the phone to play different tones
+RoboBop.java - main class where the behaviours are instantiated and arbitrator is created
