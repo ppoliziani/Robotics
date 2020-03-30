@@ -20,7 +20,6 @@ public class Connection implements Behavior {
 	public static DataOutputStream dos;
 	private static int MAX_READ = 30;
 	private static BufferedInputStream in = null;
-	private static OutputStream out = null;
 	public static boolean connected = false;
 	
 	Connection() {}
@@ -40,11 +39,6 @@ public class Connection implements Behavior {
 			if (connection != null) {
 				try {
 					in = new BufferedInputStream(connection.getInputStream());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				try {
-					out = connection.getOutputStream();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
