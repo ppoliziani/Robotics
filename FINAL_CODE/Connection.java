@@ -18,7 +18,6 @@ public class Connection implements Behavior {
 	public static Socket connection = new Socket();
 	public static DataInputStream dis;
 	public static DataOutputStream dos;
-	private static int MAX_READ = 30;
 	private static BufferedInputStream in = null;
 	public static boolean connected = false;
 	
