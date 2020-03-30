@@ -15,7 +15,6 @@ public class BatterySaver implements Behavior {
     public BatterySaver(BaseRegulatedMotor mLeft, BaseRegulatedMotor mRight) { 
         this.mLeft = mLeft;
         this.mRight = mRight;
-        mLeft.synchronizeWith(new BaseRegulatedMotor[] {mRight});
     }
     
     public void action() {
