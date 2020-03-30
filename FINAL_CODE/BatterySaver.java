@@ -20,9 +20,14 @@ public class BatterySaver implements Behavior {
     
     public void action() {
         if (takeControl()) {
-            LCD.drawString("Saver mode enabled", 0, 4);
-            mLeft.setSpeed(20);
-            mRight.setSpeed(20);
+		LCD.drawString("Saver mode enabled", 0, 4);
+		mLeft.synchronizeWith(new BaseRegulatedMotor[] {mRight});
+		mLeft.setSpeed(20);
+		mRight.setSpeed(20);
+		mLeft.startSynchronization();
+		mLeft.forward();
+		mRight.forward();
+		mLeft.endSynchronization();
         }
     }
     public void suppress() {}
