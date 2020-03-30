@@ -61,10 +61,6 @@ public class Connection implements Behavior {
 		return connected; 
 	}
 	
-	public Socket getConnection() {
-		return connection;
-	}
-	
 	public BufferedInputStream getIn() {
 		return in;
 	}
