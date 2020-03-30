@@ -61,6 +61,10 @@ public class Connection implements Behavior {
 		return connected; 
 	}
 	
+	public Sokect getConnection() {
+		return connection;
+	}
+	
 	public BufferedInputStream getIn() {
 		return in;
 	}
